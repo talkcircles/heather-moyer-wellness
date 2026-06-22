@@ -56,7 +56,7 @@ pnpm build        # production build — verified passing
 - **Next.js 16** App Router · Turbopack
 - **React 19**, TypeScript 5.7, strict mode
 - **Tailwind v4** (CSS-first config — see `app/globals.css` `@theme` block)
-- **Fonts via `next/font/google`**: Marcellus (display), Lato (body), Playfair Display (accent)
+- **Fonts via ********`next/font/google`**: Marcellus (display), Lato (body), Playfair Display (accent)
 - **`@vercel/analytics`** wired in `app/layout.tsx`
 - All pages **prerender as static** — fully edge-cacheable
 
