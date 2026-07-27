@@ -73,12 +73,14 @@ export default function HomePage() {
               My Purpose
             </p>
             <p className="font-display text-2xl md:text-3xl text-brand-secondary leading-snug">
-              &ldquo;I&apos;m a grief coach and I&apos;m here to help grieving women overcome
-              depression. We cannot walk this path alone and I&apos;m here to help you regain
-              hope for the future. My coaching and retreats will help you transform your mind
-              and your body. I believe in helping people transform their lives through somatic
-              expression and emotional release techniques because life&apos;s too short to NOT
-              fix your shit.&rdquo;
+              I help people stop surviving their lives and start Transforming them. Real change
+              doesn&apos;t happen in your head. It happens in your body. Talking about it isn&apos;t
+              enough. Insight alone doesn&apos;t transform you. Through somatic work, emotional
+              release, and deep inner exploration, I help people release what they&apos;ve been
+              holding, rewire how they relate to themselves, and rebuild a life that actually feels
+              like theirs. This isn&apos;t coping. It&apos;s a full-body, full-life reset.
+              Life&apos;s too short to stay numb or stuck. It&apos;s time to FIX YOUR SHIT &mdash; and
+              transform. Gently. Powerfully. For good.
             </p>
           </div>
         </Reveal>
