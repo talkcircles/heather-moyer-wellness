@@ -91,7 +91,7 @@ export default function HomePage() {
           <Reveal direction="left" className="order-2 md:order-1">
             <div className="img-hover-zoom relative aspect-[4/5] teardrop shadow-xl">
               <Image
-                src="/images/TianaSheridanPhoto-HMW-12.jpg"
+                src="/images/meet-heather-moyer.jpg"
                 alt="Heather Moyer portrait"
                 fill
                 className="object-cover"
