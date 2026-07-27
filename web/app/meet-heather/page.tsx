@@ -16,8 +16,8 @@ export default function MeetHeatherPage() {
   return (
     <>
       <Hero
-        image="/images/Photo-Jul-29-2025-12-21-21.jpg"
-        alt="Heather Moyer in Mt. Shasta"
+        image="/images/2026/heather-downdog-bunny-flat.jpg"
+        alt="Heather Moyer in downward dog at Bunny Flat below Mt. Shasta"
         eyebrow="Your Guide"
         title={
           <>
@@ -32,8 +32,8 @@ export default function MeetHeatherPage() {
           <Reveal direction="left">
             <div className="img-hover-zoom relative aspect-[4/5] teardrop shadow-xl">
               <Image
-                src="/images/TianaSheridanPhoto-HMW-12.jpg"
-                alt="Heather portrait"
+                src="/images/2026/heather-pluto-cave.jpg"
+                alt="Heather Moyer in a side plank at Pluto Cave"
                 fill
                 className="object-cover"
               />
@@ -111,7 +111,7 @@ export default function MeetHeatherPage() {
           {[
             "One-on-One grief coaching for grieving women.",
             "Grief & Healing and Fix Your Shit Retreats — 5-day experiences in the Mt. Shasta foothills.",
-            "Heather's Tribe — weekly virtual meetups.",
+            "5 Day Radiant Essence: Private Women's Wellness Immersion.",
             "Custom-designed experiences anywhere in the world.",
           ].map((line, i) => (
             <RevealItem key={i}>
@@ -135,7 +135,16 @@ export default function MeetHeatherPage() {
           <p className="font-accent italic text-brand-accent tracking-[0.3em] uppercase text-xs mb-3 relative">
             Featured in
           </p>
-          <p className="font-display text-3xl relative">The Good Trade · The Times</p>
+          <p className="relative flex items-center justify-center gap-x-5 gap-y-2 flex-wrap text-3xl md:text-4xl">
+            <span className="font-accent tracking-tight">The Good Trade</span>
+            <span aria-hidden className="text-brand-accent/60">·</span>
+            <span
+              style={{ fontFamily: "'Times New Roman', Times, serif" }}
+              className="font-bold tracking-tight"
+            >
+              The Times
+            </span>
+          </p>
           <h2 className="mt-16 font-display text-4xl md:text-5xl relative">
             Grieve fully to{" "}
             <span className="italic font-accent text-brand-accent">live fully.</span>

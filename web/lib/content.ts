@@ -19,7 +19,6 @@ export const nav = [
   { label: "Home", href: "/" },
   { label: "1 on 1 Coaching", href: "/1-on-1-coaching" },
   { label: "Retreats", href: "/retreats" },
-  { label: "The Tribe", href: "/the-tribe" },
   { label: "Meet Heather", href: "/meet-heather" },
 ] as const;
 
@@ -42,14 +41,14 @@ export const pathways = [
   {
     title: "Retreats",
     body: "Multi-day immersions in the breathtaking beauty of Mt. Shasta, held once a month with themed focuses on healing, grief, and self-discovery. Surround yourself with nature's energy, practice yoga and mindfulness, and connect deeply with like-minded souls.",
-    image: "/images/Private-Retreat-Sep-3-72025-21.jpg",
+    image: "/images/2026/panther-meadow.jpg",
     href: "/retreats",
   },
   {
-    title: "Tribe Weekly Meetups",
-    body: "Join our online community for group meetups centered on healing and growth. Includes guided discussions, shared experiences, and remote grief movement sessions — perfect for continuing your path with others on similar journeys. Open to all; no prior experience.",
-    image: "/images/IMG_23101.jpg",
-    href: "/the-tribe",
+    title: "Private Women's Immersion",
+    body: "A 5-Day Immersive Healing Experience in Sacred Mount Shasta. Nestled at the base of Mount Shasta, the retreat offers 1:1 world-class support, therapeutic guidance, somatic healing, and sacred nature immersion — creating an environment where transformation becomes inevitable.",
+    image: "/images/2026/heather-jump-snow.jpg",
+    href: "/retreats",
   },
   {
     title: "Custom Designed Experiences",
@@ -67,55 +66,35 @@ export const pathways = [
  */
 export type Retreat = {
   name: string;
-  theme: "fix-your-shit" | "grief-healing";
-  startISO: string;
-  endISO: string;
-  dates: string;
   location: string;
-  pricePerPerson: number;
+  /** Omit when there is no set price — the card shows a "contact for pricing" CTA instead. */
+  pricePerPerson?: number;
   href: string;
 };
 
 export const retreats: Retreat[] = [
   {
     name: "Fix Your Shit",
-    theme: "fix-your-shit",
-    startISO: "2026-01-07",
-    endISO: "2026-01-11",
-    dates: "Jan 7–11, 2026",
     location: "Mt. Shasta, CA",
     pricePerPerson: 3989,
     href: "https://www.wetravel.com/trips/wellness-retreat-fix-your-shit-heather-moyer-wellness-llc-33192328",
   },
   {
     name: "Grief & Healing",
-    theme: "grief-healing",
-    startISO: "2026-03-25",
-    endISO: "2026-03-29",
-    dates: "Mar 25–29, 2026",
     location: "Mt. Shasta, CA",
     pricePerPerson: 3989,
     href: "https://www.wetravel.com/trips/wellness-retreat-grief-healing-heather-moyer-wellness-llc-43368304",
   },
   {
-    name: "Fix Your Shit",
-    theme: "fix-your-shit",
-    startISO: "2026-05-20",
-    endISO: "2026-05-24",
-    dates: "May 20–24, 2026",
+    name: "Radiant Essence",
     location: "Mt. Shasta, CA",
-    pricePerPerson: 3989,
-    href: "https://www.wetravel.com/trips/wellness-retreat-fix-your-shit-heather-moyer-wellness-llc-78998598",
+    pricePerPerson: 24999,
+    href: site.wetravel,
   },
   {
-    name: "Grief & Healing",
-    theme: "grief-healing",
-    startISO: "2026-06-10",
-    endISO: "2026-06-14",
-    dates: "Jun 10–14, 2026",
+    name: "Personalized Retreat",
     location: "Mt. Shasta, CA",
-    pricePerPerson: 3989,
-    href: "https://www.wetravel.com/trips/wellness-retreat-grief-healing-heather-moyer-wellness-llc-37682117",
+    href: "/contact",
   },
 ];
 
@@ -160,16 +139,16 @@ export const testimonials = [
 
 export const locations = [
   {
-    name: "Amalfi Coast, Italy",
-    body: "Sea views, terraced gardens, and Mediterranean charm — the perfect setting for coastal serenity.",
+    name: "Nosara, Costa Rica",
+    body: "Join me in a tropical paradise that will soothe your senses and rejuvenate your soul.",
   },
   {
     name: "Bali, Indonesia",
     body: "Jungle hideaways, sacred rivers, and vibrant wellness culture in the heart of nature.",
   },
   {
-    name: "Kyoto, Japan",
-    body: "Zen gardens, ancient temples, and tea ceremonies that blend tradition with mindful living.",
+    name: "Punta Cana, Dominican Republic",
+    body: "Immerse yourself in nature's serene symphony as cool tropical breezes guide your transformation.",
   },
 ];
 

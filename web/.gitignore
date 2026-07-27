@@ -5,3 +5,8 @@ node_modules
 .DS_Store
 *.log
 .vercel
+
+# Source assets & internal docs (not deployed)
+/public/2026-images/
+/public/changes/
+tsconfig.tsbuildinfo

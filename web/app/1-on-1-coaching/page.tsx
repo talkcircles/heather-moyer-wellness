@@ -42,39 +42,12 @@ const path = [
   },
 ];
 
-const packages = [
-  {
-    name: "3-Day Reset",
-    blurb: "A gentle weekend to unplug and begin again.",
-    rows: [
-      { label: "Single Room", regular: "$420", early: "$380" },
-      { label: "Shared Room", regular: "$360", early: "$330" },
-    ],
-  },
-  {
-    name: "7-Day Immersion",
-    blurb: "A full week of deep rest and healing practices.",
-    rows: [
-      { label: "Single Room", regular: "$890", early: "$820" },
-      { label: "Shared Room", regular: "$790", early: "$730" },
-    ],
-  },
-  {
-    name: "Couples Package",
-    blurb: "Shared accommodation and dual participation for two.",
-    rows: [
-      { label: "Standard Room", regular: "$1,600", early: "$1,480" },
-      { label: "Premium Room", regular: "$1,800", early: "$1,650" },
-    ],
-  },
-];
-
 export default function CoachingPage() {
   return (
     <>
       <Hero
-        image="/images/IMG_2202.jpg"
-        alt="Mt. Shasta serenity"
+        image="/images/2026/heather-laptop-bw.jpg"
+        alt="Heather Moyer coaching remotely from Mt. Shasta"
         eyebrow="1-on-1"
         title={
           <>
@@ -188,52 +161,6 @@ export default function CoachingPage() {
         </div>
       </Section>
 
-      <Section className="bg-brand-secondary text-brand-bg relative overflow-hidden">
-        <div className="pointer-events-none absolute -top-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-brand-primary/30 blur-3xl animate-float" />
-        <BrandMark className="pointer-events-none absolute -left-32 -bottom-32 h-[24rem] w-[24rem] text-brand-bg/5 animate-slow-spin" />
-        <Reveal>
-          <div className="text-center max-w-2xl mx-auto relative">
-            <p className="font-accent italic text-brand-accent tracking-[0.3em] uppercase text-xs mb-3">
-              Participation packages
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl">
-              Start your{" "}
-              <span className="italic font-accent text-brand-accent">escape.</span>
-            </h2>
-          </div>
-        </Reveal>
-        <RevealStagger
-          staggerChildren={0.12}
-          className="mt-12 grid gap-6 md:grid-cols-3 relative"
-        >
-          {packages.map((pkg) => (
-            <RevealItem key={pkg.name}>
-              <div className="h-full rounded-3xl bg-brand-bg text-brand-text p-7 hover:shadow-2xl transition-shadow duration-500">
-                <h3 className="font-display text-2xl text-brand-secondary">{pkg.name}</h3>
-                <p className="mt-2 text-sm text-brand-text">{pkg.blurb}</p>
-                <table className="mt-5 w-full text-sm">
-                  <thead>
-                    <tr className="text-left text-xs uppercase tracking-wide text-brand-muted">
-                      <th className="py-2">Room</th>
-                      <th className="py-2">Regular</th>
-                      <th className="py-2">Early</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {pkg.rows.map((row) => (
-                      <tr key={row.label} className="border-t border-brand-muted/20">
-                        <td className="py-2 text-brand-secondary">{row.label}</td>
-                        <td className="py-2">{row.regular}</td>
-                        <td className="py-2 text-brand-primary">{row.early}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-      </Section>
     </>
   );
 }

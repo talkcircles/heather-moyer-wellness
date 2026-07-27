@@ -56,7 +56,7 @@ export default function HomePage() {
                 <BrandMark className="h-3.5 w-3.5 text-brand-accent" /> Featured in The Good Trade
               </li>
               <li className="flex items-center gap-3">
-                <BrandMark className="h-3.5 w-3.5 text-brand-accent" /> Weekly Tribe Meetups
+                <BrandMark className="h-3.5 w-3.5 text-brand-accent" /> Private Women&apos;s Immersion
               </li>
             </ul>
           ))}
@@ -210,26 +210,17 @@ export default function HomePage() {
       {/* Upcoming retreats — live from WeTravel */}
       <Section className="bg-brand-bg relative overflow-hidden">
         <Reveal>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <SectionEyebrow>Upcoming Retreats</SectionEyebrow>
-              <SectionHeading>
-                Step into the foothills of{" "}
-                <span className="italic font-accent text-brand-primary">Mt. Shasta.</span>
-              </SectionHeading>
+          <div className="mb-12">
+            <SectionEyebrow>Upcoming Retreats</SectionEyebrow>
+            <SectionHeading>
+              Step into the foothills of{" "}
+              <span className="italic font-accent text-brand-primary">Mt. Shasta.</span>
+            </SectionHeading>
+            <div className="mt-8">
+              <CtaButton href={site.wetravel} external>
+                Book now
+              </CtaButton>
             </div>
-            <a
-              href={site.wetravel}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-1.5 text-sm text-brand-primary hover:text-brand-secondary transition-colors"
-            >
-              See all on WeTravel
-              <ArrowUpRight
-                size={14}
-                className="transition-transform group-hover:rotate-45"
-              />
-            </a>
           </div>
         </Reveal>
         <RevealStagger
@@ -238,33 +229,26 @@ export default function HomePage() {
         >
           {retreats.map((r, i) => (
             <RevealItem key={`${r.name}-${i}`}>
-              <a
-                href={r.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block h-full overflow-hidden rounded-3xl border border-brand-muted/15 bg-brand-alt p-7 hover:border-brand-primary hover:shadow-2xl hover:-translate-y-1 transition-all duration-500"
-              >
+              <div className="group relative flex h-full flex-col rounded-3xl border border-brand-muted/15 bg-brand-alt p-7 hover:border-brand-primary/50 hover:shadow-xl transition-all duration-500 overflow-hidden">
                 <BrandMark className="absolute -top-6 -right-6 h-24 w-24 text-brand-accent/15 group-hover:text-brand-accent/30 group-hover:rotate-45 transition-all duration-700" />
-                <p className="text-xs text-brand-muted tracking-[0.2em] uppercase relative">
-                  {r.dates}
-                </p>
-                <h3 className="mt-3 font-display text-2xl text-brand-secondary relative">
+                <h3 className="font-display text-2xl leading-tight text-brand-secondary relative min-h-[4rem]">
                   {r.name}
                 </h3>
-                <p className="mt-2 text-sm text-brand-text relative">{r.location}</p>
-                <div className="mt-6 flex items-center justify-between text-sm relative">
-                  <span className="font-display text-xl text-brand-primary">
+                <p className="mt-3 text-sm text-brand-text relative">{r.location}</p>
+                {r.pricePerPerson ? (
+                  <p className="mt-4 font-display text-2xl text-brand-primary relative">
                     ${r.pricePerPerson.toLocaleString()}
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-brand-primary group-hover:gap-2.5 transition-all">
-                    Book
-                    <ArrowUpRight
-                      size={14}
-                      className="transition-transform group-hover:rotate-45"
-                    />
-                  </span>
-                </div>
-              </a>
+                  </p>
+                ) : (
+                  <Link
+                    href={r.href}
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm text-brand-primary hover:gap-2.5 transition-all relative"
+                  >
+                    Contact Heather for pricing
+                    <ArrowUpRight size={14} />
+                  </Link>
+                )}
+              </div>
             </RevealItem>
           ))}
         </RevealStagger>
