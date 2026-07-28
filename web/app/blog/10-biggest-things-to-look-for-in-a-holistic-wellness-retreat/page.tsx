@@ -1,6 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
+import { site } from "@/lib/content";
 
 export const metadata = {
   title: "10 Biggest Things To Look For In A Holistic Wellness Retreat",
@@ -86,23 +87,24 @@ const questions = [
 
 export default function TenBiggestThings() {
   return (
-    <Section className="bg-brand-bg pt-44 md:pt-52">
-      <article className="max-w-3xl mx-auto">
-        <Link href="/blog" className="text-sm text-brand-primary hover:underline">
-          ← All posts
-        </Link>
-        <header className="mt-6">
-          <p className="text-xs uppercase tracking-wide text-brand-primary">
-            April 13, 2025 · Wellness · Heather Moyer
-          </p>
-          <h1 className="mt-3 font-display text-4xl md:text-6xl text-brand-secondary leading-tight">
-            10 Biggest Things To Look For In A Holistic Wellness Retreat
-          </h1>
-        </header>
-        <div className="relative aspect-[16/9] mt-10 rounded-3xl overflow-hidden">
-          <Image src="/images/TianaSheridanPhoto-HMW-12.jpg" alt="" fill className="object-cover" priority />
-        </div>
-        <div className="mt-12 space-y-6 text-brand-text text-lg leading-relaxed">
+    <>
+      <Hero
+        image="/images/TianaSheridanPhoto-HMW-12.jpg"
+        alt=""
+        eyebrow="April 13, 2025 · Wellness"
+        title={
+          <>
+            10 Biggest Things To Look For In A{" "}
+            <span className="italic font-accent text-brand-accent">Holistic Retreat.</span>
+          </>
+        }
+      />
+      <Section className="bg-brand-bg">
+        <article className="max-w-3xl mx-auto">
+          <Link href="/blog" className="text-sm text-brand-primary hover:underline">
+            ← All posts
+          </Link>
+          <div className="mt-8 space-y-6 text-brand-text text-lg leading-relaxed">
           <p>
             So you&apos;re interested in attending a holistic wellness retreat? Wonderful!
             You are probably filled with a lot of uncertainty and a lot of questions.
@@ -143,13 +145,20 @@ export default function TenBiggestThings() {
 
           <p className="pt-6">
             Join me at any one of my wellness retreats throughout the year in the
-            beautiful mountains of Mount Shasta, CA. If you are interested, drop me an
-            email. I am thrilled to speak with you about your goals and answer your
+            beautiful mountains of Mount Shasta, CA. If you are interested,{" "}
+            <a
+              href={`mailto:${site.email}`}
+              className="text-brand-primary underline underline-offset-4 hover:text-brand-secondary transition-colors"
+            >
+              drop me an email
+            </a>
+            . I am thrilled to speak with you about your goals and answer your
             questions.
           </p>
           <p className="font-display text-2xl text-brand-primary">HeatherXO</p>
-        </div>
-      </article>
-    </Section>
+          </div>
+        </article>
+      </Section>
+    </>
   );
 }

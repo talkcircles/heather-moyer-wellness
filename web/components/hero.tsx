@@ -13,6 +13,8 @@ type Props = {
   cta?: React.ReactNode;
   align?: "center" | "left";
   className?: string;
+  /** Tailwind object-position class for the background image, e.g. "object-bottom". Defaults to centered. */
+  imagePosition?: string;
 };
 
 export function Hero({
@@ -24,6 +26,7 @@ export function Hero({
   cta,
   align = "center",
   className,
+  imagePosition = "object-center",
 }: Props) {
   const reduce = useReducedMotion();
   return (
@@ -39,7 +42,7 @@ export function Hero({
         transition={{ duration: 2.4, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-0 -z-20"
       >
-        <Image src={image} alt={alt} fill priority className="object-cover" />
+        <Image src={image} alt={alt} fill priority className={cn("object-cover", imagePosition)} />
       </motion.div>
 
       {/* Light slate-teal tint — keeps the image visible while unifying the hue */}

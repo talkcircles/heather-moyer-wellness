@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
 
 export const metadata = {
@@ -10,29 +10,23 @@ export const metadata = {
 
 export default function EchoOfSorrow() {
   return (
-    <Section className="bg-brand-bg pt-44 md:pt-52">
-      <article className="max-w-3xl mx-auto">
-        <Link href="/blog" className="text-sm text-brand-primary hover:underline">
-          ← All posts
-        </Link>
-        <header className="mt-6">
-          <p className="text-xs uppercase tracking-wide text-brand-primary">
-            October 21, 2025 · Wellness · Heather Moyer
-          </p>
-          <h1 className="mt-3 font-display text-4xl md:text-6xl text-brand-secondary leading-tight">
-            The Echo of Sorrow
-          </h1>
-        </header>
-        <div className="relative aspect-[16/9] mt-10 rounded-3xl overflow-hidden">
-          <Image
-            src="/images/Photo-Aug-02-2025-22-45-10-1.jpg"
-            alt=""
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="prose mt-12 space-y-6 text-brand-text text-lg leading-relaxed">
+    <>
+      <Hero
+        image="/images/Photo-Aug-02-2025-22-45-10-1.jpg"
+        alt=""
+        eyebrow="October 21, 2025 · Wellness"
+        title={
+          <>
+            The Echo of <span className="italic font-accent text-brand-accent">Sorrow.</span>
+          </>
+        }
+      />
+      <Section className="bg-brand-bg">
+        <article className="max-w-3xl mx-auto">
+          <Link href="/blog" className="text-sm text-brand-primary hover:underline">
+            ← All posts
+          </Link>
+          <div className="prose mt-8 space-y-6 text-brand-text text-lg leading-relaxed">
           <p>
             You take your last breath with your loved one being here. And suddenly,
             unexpectedly, they&apos;re gone. And with your very next breath, your life has
@@ -133,8 +127,9 @@ export default function EchoOfSorrow() {
             The death of a loved one doesn&apos;t kill you, even though at times,
             you&apos;re certain it will, and most of time you wish it would.
           </p>
-        </div>
-      </article>
-    </Section>
+          </div>
+        </article>
+      </Section>
+    </>
   );
 }

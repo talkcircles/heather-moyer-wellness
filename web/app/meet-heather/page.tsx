@@ -18,6 +18,7 @@ export default function MeetHeatherPage() {
       <Hero
         image="/images/2026/heather-downdog-bunny-flat.jpg"
         alt="Heather Moyer in downward dog at Bunny Flat below Mt. Shasta"
+        imagePosition="object-bottom"
         eyebrow="Your Guide"
         title={
           <>
@@ -35,7 +36,7 @@ export default function MeetHeatherPage() {
                 src="/images/2026/heather-pluto-cave.jpg"
                 alt="Heather Moyer in a side plank at Pluto Cave"
                 fill
-                className="object-cover"
+                className="object-cover object-right"
               />
             </div>
           </Reveal>

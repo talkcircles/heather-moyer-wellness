@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Reveal, RevealItem, RevealStagger } from "@/components/reveal";
-import { Section, SectionEyebrow, SectionHeading } from "@/components/section";
+import { Hero } from "@/components/hero";
+import { RevealItem, RevealStagger } from "@/components/reveal";
+import { Section } from "@/components/section";
 import { blogPosts } from "@/lib/content";
 
 export const metadata = {
@@ -11,17 +12,23 @@ export const metadata = {
 
 export default function BlogIndex() {
   return (
-    <Section className="bg-brand-bg pt-44 md:pt-52 relative overflow-hidden">
-      <div className="pointer-events-none absolute -top-32 -left-32 h-80 w-80 rounded-full bg-brand-accent/25 blur-3xl animate-float" />
-      <Reveal>
-        <div className="text-center relative">
-          <SectionEyebrow>Writing</SectionEyebrow>
-          <SectionHeading>From the journal.</SectionHeading>
-        </div>
-      </Reveal>
+    <>
+      <Hero
+        image="/images/Private-Retreat-Sep-3-72025-21.jpg"
+        alt="A quiet moment in the Mt. Shasta foothills"
+        eyebrow="Writing"
+        title={
+          <>
+            From the <span className="italic font-accent text-brand-accent">journal.</span>
+          </>
+        }
+        subtitle="Essays and reflections on grief, healing, and retreat life."
+      />
+
+      <Section className="bg-brand-bg relative overflow-hidden">
       <RevealStagger
         staggerChildren={0.12}
-        className="mt-14 grid gap-10 md:grid-cols-2 max-w-5xl mx-auto"
+        className="grid gap-10 md:grid-cols-2 max-w-5xl mx-auto"
       >
         {blogPosts.map((post) => (
           <RevealItem key={post.slug}>
@@ -56,6 +63,7 @@ export default function BlogIndex() {
           </RevealItem>
         ))}
       </RevealStagger>
-    </Section>
+      </Section>
+    </>
   );
 }
