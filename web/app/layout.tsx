@@ -54,6 +54,30 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <SiteFooter />
         <Analytics />
+        {/* fleet-legal-links: stable, server-rendered policy links */}
+        <nav
+          id="fleet-legal-links"
+          aria-label="Legal and accessibility"
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "0.25rem 1.1rem",
+            padding: "0.9rem 1rem",
+            background: "#111827",
+            color: "#ffffff",
+            borderTop: "1px solid rgba(255,255,255,.18)",
+            fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+            fontSize: "0.8rem",
+            fontWeight: 600,
+            lineHeight: 1.5,
+          }}
+        >
+          <a href="/legal.html#privacy" style={{ color: "inherit", padding: "0.45rem 0", textDecoration: "underline", textUnderlineOffset: "0.2em" }}>Privacy Policy</a>
+          <a href="/legal.html#terms" style={{ color: "inherit", padding: "0.45rem 0", textDecoration: "underline", textUnderlineOffset: "0.2em" }}>Terms of Use</a>
+          <a href="/legal.html#accessibility" style={{ color: "inherit", padding: "0.45rem 0", textDecoration: "underline", textUnderlineOffset: "0.2em" }}>Accessibility</a>
+          <a href="/legal.html#notices" style={{ color: "inherit", padding: "0.45rem 0", textDecoration: "underline", textUnderlineOffset: "0.2em" }}>Important Notices</a>
+        </nav>
       </body>
     </html>
   );
