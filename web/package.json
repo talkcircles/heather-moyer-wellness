@@ -13,9 +13,10 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.39.0",
     "lucide-react": "^0.564.0",
-    "next": "16.3.6",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "next": "16.4.3",
+    "react": "19.2.9",
+    "react-dom": "19.2.9",
+    "sharp": "0.35.5",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
@@ -23,8 +24,19 @@
     "@types/node": "^22",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "postcss": "^8.5",
+    "postcss": "8.5.32",
     "tailwindcss": "^4.2.0",
     "typescript": "5.7.3"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss": "8.5.32",
+      "sharp": "0.35.5",
+      "baseline-browser-mapping@>=2.0.0 <2.11.0": ">=2.11.0",
+      "source-map-js@>=1.0.0 <1.2.2": ">=1.2.2"
+    }
   }
 }
